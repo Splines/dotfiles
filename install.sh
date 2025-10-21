@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # zsh
 sudo apt update && sudo apt install -y zsh
