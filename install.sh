@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# zsh
+sudo apt update && sudo apt install -y zsh
+
 # Powerline fonts
 # https://github.com/powerline/fonts?tab=readme-ov-file#quick-installation
 git clone --depth=1 https://github.com/powerline/fonts.git
