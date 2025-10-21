@@ -2,7 +2,7 @@
 
 # Powerline fonts
 # https://github.com/powerline/fonts?tab=readme-ov-file#quick-installation
-git clone --depth=1https://github.com/powerline/fonts.git
+git clone --depth=1 https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh
 cd .. && rm -rf fonts
