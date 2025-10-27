@@ -108,6 +108,7 @@
     per_directory_history   # Oh My Zsh per-directory-history local/global indicator
     # cpu_arch              # CPU architecture
     # time                  # current time
+    screen_session          # name of current screen session
     # =========================[ Line #2 ]=========================
     newline                 # \n
     # ip                    # ip address and bandwidth usage for a specified network interface
@@ -1743,3 +1744,19 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+
+#########################################
+# Custom
+#########################################
+
+# show current GNU Screen session name
+function prompt_screen_session() {
+  if [[ -n $STY ]]; then
+    local session="${STY##*.}"  # Extract only the session name
+    p10k segment -t "🖥️  $session" -f 39 -b 237
+  fi
+}
+functions[p10k::segment::screen_session]=prompt_screen_session
+# then use "screen-session" somewhere, e.g. in
+# typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(screen_session)
+
